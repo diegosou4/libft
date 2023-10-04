@@ -9,36 +9,33 @@
 /*   Updated: 2023/10/03 16:01:14 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_strlen.c"
 #include <stdio.h>
 #include <string.h>
-#include "ft_strlen.c"
 
-
-
-size_t    ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t    l_src;
-    size_t     l_dst;
-    l_src = 0;
-    l_dst = 0;
-    l_dst = ft_strlen(dst); 
-   
-    while(src[l_src])
-        l_src++;
-    while(*dst)
-        *dst++;
-    if(size >= ((l_dst + l_src) + 1))
-    {
-        while(*src && size > 1 && size--)
-            *dst++ = *src++;
-            *dst = '\0';
-    }
-    return((l_dst + l_src));
-   
+	size_t	l_src;
+	size_t	l_dst;
+
+	l_src = 0;
+	l_dst = 0;
+	l_dst = ft_strlen(dst);
+	while (src[l_src])
+		l_src++;
+	while (*dst)
+		*dst++;
+	if (size >= ((l_dst + l_src) + 1))
+	{
+		while (*src && size > 1 && size--)
+			*dst++ = *src++;
+		*dst = '\0';
+	}
+	return ((l_dst + l_src));
 }
 /*
 
-int main() {
+int	main(void) {
     char destination[20] = "diego";
     const char *source = "sardinha";
     size_t size_of_destination = sizeof(destination);
@@ -55,6 +52,6 @@ int main() {
 
     
 
-    return 0;
+    return (0);
 }
 */

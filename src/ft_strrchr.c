@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 11:57:20 by diegmore          #+#    #+#             */
-/*   Updated: 2023/10/03 11:57:25 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/04 11:29:14 by diegmore          #+#    #+#             */
+/*   Updated: 2023/10/04 13:58:29 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	void	*p_dest;
+#include "ft_strlen.c"
 
-	p_dest = dest;
-	if (dest > src)
+char	*ft_strrchr(const char *str, int c)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = ft_strlen((char *)str);
+	while (j != i && *str++)
+		j++;
+	while (i != 0)
 	{
-		while (n-- && *(unsigned char *)src != '\0')
-		{
-			*(unsigned char *)dest++ = *(unsigned char *)src++;
-		}
-		*(unsigned char *)dest = '\0';
+		if (*--str == c)
+			return ((char *)str);
+		i--;
 	}
-	else
-	{
-		while (n--)
-			*(unsigned char *)dest++ = *(unsigned char *)src++;
-	}
-	return (p_dest);
+	return (0);
 }
