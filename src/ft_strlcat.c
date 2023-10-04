@@ -17,13 +17,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	l_src;
 	size_t	l_dst;
-
+	size_t temp;
+	
 	l_src = 0;
 	l_dst = 0;
 	l_dst = ft_strlen(dst);
+	temp = l_dst;
 	while (src[l_src])
 		l_src++;
-	while (*dst)
+	while (temp--)
 		*dst++;
 	if (size >= ((l_dst + l_src) + 1))
 	{
@@ -33,7 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	return ((l_dst + l_src));
 }
-/*
+
 
 int	main(void) {
     char destination[20] = "diego";
@@ -54,4 +56,3 @@ int	main(void) {
 
     return (0);
 }
-*/
