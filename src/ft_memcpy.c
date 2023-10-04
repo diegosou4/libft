@@ -15,6 +15,7 @@ void	*ft_memycpy(void *dest, void *src, size_t n)
 	void	*p_dest;
 
 	p_dest = dest;
+	
 	while (n--)
 	{
 		*(unsigned char *)dest++ = *(unsigned char *)src++;
