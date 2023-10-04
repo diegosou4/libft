@@ -11,33 +11,36 @@
 /* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
+#include "ft_strlen.c"
 
 
 
 size_t    ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t    s_src;
-    size_t     s_dst;
-    s_dst = 0;
-    s_src = 0;
-    while(dst[s_dst])
-            s_dst++;
-    while(*++dst &&  size > 0 && size--)
-        s_src++;
-    while(*src && size > 1 &&  size--)
+    size_t    l_src;
+    size_t     l_dst;
+    l_src = 0;
+    l_dst = 0;
+    l_dst = ft_strlen(dst); 
+   
+    while(src[l_src])
+        l_src++;
+    while(*dst)
+        *dst++;
+    if(size >= ((l_dst + l_src) + 1))
     {
-        *dst++ = *src++;
+        while(*src && size > 1 && size--)
+            *dst++ = *src++;
+            *dst = '\0';
     }
-    if(size == 1)
-        *dst = '\0';
-    return(s_src + s_dst );
-
+    return((l_dst + l_src));
+   
 }
-
+/*
 
 int main() {
-    char destination[20] = "Hello";
-    const char *source = "Mundoods";
+    char destination[20] = "diego";
+    const char *source = "sardinha";
     size_t size_of_destination = sizeof(destination);
 
     printf("Before ft_strlcat:\n");
@@ -54,3 +57,4 @@ int main() {
 
     return 0;
 }
+*/
