@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 16:23:45 by diegmore          #+#    #+#             */
-/*   Updated: 2023/09/03 19:41:50 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/05 13:41:16 by diegmore          #+#    #+#             */
+/*   Updated: 2023/10/05 13:43:54 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strupcase(char *str)
-{
-	int	i;
 
+char *ft_touper(char *str)
+{
+	int i;
 	i = 0;
-	while (str[i] != '\0')
+	while(str[i])
 	{
-		if (str[i] >= 97 && str[i] <= 122)
-		{
+		if(str[i] >= 97 && str[i] <= 122)
 			str[i] -= 32;
-		}
 		i++;
 	}
-	return (str);
+	return(str);
 }
