@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 17:02:06 by diegmore          #+#    #+#             */
-/*   Updated: 2023/09/04 19:29:22 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/05 13:46:25 by diegmore          #+#    #+#             */
+/*   Updated: 2023/10/05 13:47:30 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+char	*ft_tolower(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+
+	while (str[i])
 	{
 		if (str[i] >= 65 && str[i] <= 90)
-		{
 			str[i] += 32;
-		}
 		i++;
 	}
 	return (str);
