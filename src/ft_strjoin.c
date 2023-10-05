@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 12:43:36 by diegmore          #+#    #+#             */
-/*   Updated: 2023/09/13 17:09:40 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/05 13:50:07 by diegmore          #+#    #+#             */
+/*   Updated: 2023/10/05 13:50:08 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_sizeofarray(char *src)
@@ -76,23 +75,3 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	ft_strcpy(strs, newarray, sep, size);
 	return (newarray);
 }
-/*
-int	main(void)
-{
-	int		size;
-	char	*seperador;
-	char	*divice;
-
-	size = 4;
-	char *matrix[] =
-		{
-			"Yung",
-			"Buda",
-			"7K",
-		};
-	seperador = "";
-	divice = ft_strjoin(3, matrix, seperador);
-	printf("%s \n", divice);
-	free(divice);
-}
-*/
