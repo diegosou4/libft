@@ -12,15 +12,20 @@
 
 #include "libft.h"
 
-size_t	strlcpy(char *dest, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	size_t	len;
+	size_t	len_src;
+	size_t	index;
 
-	len = 0;
-	while (*(src + len) && --dstsize)
-		*dest++ = *(src + len++);
-	*dest = '\0';
-	while (*(src + len))
-		++len;
-	return (len);
+	index = 0;
+	len_src = ft_strlen((char *)src);
+	if (dstsize == 0)
+		return (len_src);
+	while (src[index] && index < dstsize - 1)
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	dest[index] = '\0';
+	return (len_src);
 }
