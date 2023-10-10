@@ -12,56 +12,38 @@
 
 #include "libft.h"
 
-void	ft_strcpy(char **strs, char *newArray, char *sep, int size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
-	int	k;
-	int	index;
+	size_t	size_s1;
+	size_t	size_s2;
+	size_t	i;
+	size_t	j;
+	char	*new;
 
 	i = 0;
-	index = 0;
-	k = 0;
-	while (k < size)
+	j = 0;
+	size_s1 = ft_strlen((char *)s1);
+	size_s2 = ft_strlen((char *)s2);
+	new = (char *)malloc(((size_s1 + size_s2) + (1)) * sizeof(char));
+	if (!new || (!s1 && !s2))
+		return (0);
+	while (s1[i] != '\0')
 	{
-		index = 0;
-		while (strs[k][index])
-			newArray[i++] = strs[k][index++];
-		j = 0;
-		if (k < size - 1)
-		{
-			while (sep[j])
-				newArray[i++] = sep[j++];
-		}
-		k++;
-	}
-	newArray[i] = '\0';
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char	*newarray;
-	int		sizematrix;
-	int		sizesep;
-	int		i;
-
-	sizesep = 0;
-	i = 0;
-	sizematrix = 0;
-	if (size == 0)
-	{
-		newarray = (char *)malloc(1);
-		newarray[0] = '\0';
-		return (newarray);
-	}
-	while (i < size)
-	{
-		sizematrix += ft_strlen(strs[i]);
+		new[i] = s1[i];
 		i++;
 	}
-	sizesep += ft_strlen(sep);
-	sizesep *= (size - 1);
-	newarray = (char *)malloc(sizematrix + sizesep + 1);
-	ft_strcpy(strs, newarray, sep, size);
-	return (newarray);
+	while (s2[j] != '\0')
+		new[i++] = s2[j++];
+	new[i] = '\0';
+	return (new);
 }
+
+/*
+	The fuction strjoin return a new string with s1 and s2,
+		so you need size of s1 and s2,
+	before you neeed malloc,
+		checks if malloc is done and if s1 and s2 have anything,
+		if not return null,
+	before you need two variables for copy s1 and s2,
+		so in the final you put null in last and return the string
+*/
