@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 13:46:32 by diegmore          #+#    #+#             */
-/*   Updated: 2023/10/11 13:46:34 by diegmore         ###   ########.fr       */
+/*   Created: 2023/10/11 14:34:39 by diegmore          #+#    #+#             */
+/*   Updated: 2023/10/11 14:34:41 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-t_list *ft_lstlast(t_list *lst)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-    int tamlist;
-    int i;
+    t_list *l;
 
-    i = 0;
-    tamlist = ft_lstsize(lst);
-
-    while(i < tamlist - 1)
+    if(!lst || !new)
+        return;
+    if(!(*lst))
     {
-        i++;
-        lst = lst->next;
+        *lst = new;
+        return;
     }
-    return(lst);
+        l = *lst;
+    while(l->next)
+    {
+        l = l->next;
+        }
+    l->next  = new;
 }
+
+//  Verifico se eles sao nulos
+//  verifico se o valor dentro do lst e nulo ou nao
+// (*lst) acesso o valor apontado pelo ponteiro duplo
+
