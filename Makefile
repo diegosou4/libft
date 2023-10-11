@@ -10,18 +10,25 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
       ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
       ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
       ft_putnbr_fd.c ft_strmapi.c ft_striteri.c \
-      ft_itoa.c ft_split.c
+      ft_itoa.c 
+BSRC = ft_lstnew.c ft_lstsize.c ft_lstlast.c \
+      ft_lstadd_back.c ft_lstadd_back.c \
+      ft_lstadd_front.c ft_lstiter.c \
+      ft_lstdelone.c ft_lstclear.c \
+      ft_lstmap.c
 OBJECTS = $(SRC:.c=.o)
-INCLUDES = includes
-
+BOBJECTS = $(BSRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
-
+bonus: $(BOBJECTS) $(OBJECTS)
+	ar rcs $(NAME) $(BOBJECTS) $(OBJECTS)
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS)  $(BOBJECTS)
 fclean: clean
 	rm -f $(NAME)
 re:	fclean all
+
+

@@ -18,3 +18,6 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+// Verifica se o char e um
+// numero

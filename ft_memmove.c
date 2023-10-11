@@ -6,12 +6,11 @@
 /*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:57:20 by diegmore          #+#    #+#             */
-/*   Updated: 2023/10/03 11:57:25 by diegmore         ###   ########.fr       */
+/*   Updated: 2023/10/11 19:23:19 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -28,3 +27,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+// a funcao recebe a mesma string entao
+// ela verifica se o dest esta a frente na memoria
+// caso esteja ele faz de tras para frente
+// para evitar sobreposicao de memoria

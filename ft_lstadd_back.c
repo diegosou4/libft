@@ -12,26 +12,25 @@
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *l;
+	t_list	*l;
 
-    if(!lst || !new)
-        return;
-    if(!(*lst))
-    {
-        *lst = new;
-        return;
-    }
-        l = *lst;
-    while(l->next)
-    {
-        l = l->next;
-        }
-    l->next  = new;
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
+	l = *lst;
+	while (l->next)
+	{
+		l = l->next;
+	}
+	l->next = new;
 }
 
 //  Verifico se eles sao nulos
 //  verifico se o valor dentro do lst e nulo ou nao
 // (*lst) acesso o valor apontado pelo ponteiro duplo
-

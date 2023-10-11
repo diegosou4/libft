@@ -12,7 +12,14 @@
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-        return;
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
+
+// Del e uma funcao que faz o free dentro do content
+// chamamos a funcao ela faz o free dentro do content
+// depois fazemos o free da stuct

@@ -23,3 +23,6 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
+
+// pega o tamanho
+// da string

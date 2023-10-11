@@ -18,3 +18,6 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+
+// Verifica se o char e um
+// printavel
