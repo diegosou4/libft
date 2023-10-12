@@ -66,3 +66,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // devemos retornar um nullo 
 // mas temos que ser bem criteriosos
 // desta forma faz corre bem
+//  void *(*f)(void *) permite que você aponte para
+// funções que retornam ponteiros para qualquer tipo de dado.
+// void (*del)(void *) permite que você aponte para funções que não
+// retornam nenhum valor (retorno void) e são geralmente usadas
+//  para operações de limpeza e liberação de recursos.
+//
