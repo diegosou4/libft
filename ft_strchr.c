@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
-	int	length_s;
+	size_t	i;
+	size_t	length_s;
 
 	length_s = ft_strlen((char *)str);
 	i = 0;
@@ -25,7 +25,12 @@ char	*ft_strchr(const char *str, int c)
 			return ((char *)(str + i));
 		i++;
 	}
-	if (c == 0)
+	if (str[i] == (char)c)
+	{
 		return ((char *)(str + length_s));
-	return (NULL);
+	}
+	else
+	{
+		return (NULL);
+	}
 }

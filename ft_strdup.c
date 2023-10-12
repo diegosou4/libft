@@ -15,8 +15,8 @@
 char	*ft_strdup(const char *src)
 {
 	char	*dest;
-	int		size;
-	int		i;
+	size_t	size;
+	size_t	i;
 
 	i = 0;
 	size = ft_strlen((char *)src);
@@ -31,3 +31,9 @@ char	*ft_strdup(const char *src)
 	dest[i] = '\0';
 	return (dest);
 }
+
+// pega o src e faz uma copia
+// usa o malloc para isso
+// eu uso o calloc por ser mais seguro
+// muito bom para uma string que tem
+// um tamanho menor que o buff
