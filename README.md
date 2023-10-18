@@ -9,6 +9,8 @@ Essas funções são projetadas para auxiliar na manipulação de strings, estru
 incluir funcionalidades relacionadas a saída (output). A biblioteca Libft é uma ferramenta fundamental que os estudantes 
 da 42 utilizam como base para desenvolver futuros projetos, aprimorando suas habilidades de programação em C. 
 
+## Subject
+  [SUBJECT](https://github.com/diegosou4/libft/blob/main/en.subject.pdf)
 
 ## Lista de Funcoes
 • [isalpha](https://github.com/diegosou4/libft/blob/main/ft_isalpha.c) • [isdigit](https://github.com/diegosou4/libft/blob/main/ft_isdigit.c)
